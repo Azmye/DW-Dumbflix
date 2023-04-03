@@ -1,6 +1,6 @@
 import ApiConfig from '../../Api/ApiConfig';
 import useFetch from '../../Api/useFetch';
-import CardItem from '../CardItem';
+import CardItem from '../Global/CardItem';
 
 const ShowsList = (props) => {
   const { data, loading, error } = useFetch('/tv/top_rated');

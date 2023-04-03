@@ -7,9 +7,9 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center relative">
         {/* Nav Links */}
         <div className="flex gap-3 items-center text-white font-semibold">
-          <Link>Home</Link>
-          <Link>TV Shows</Link>
-          <Link>Movies</Link>
+          <Link to={'/'}>Home</Link>
+          <Link to={'/shows'}>TV Shows</Link>
+          <Link to={'/movies'}>Movies</Link>
         </div>
 
         {/* Nav Brand */}
