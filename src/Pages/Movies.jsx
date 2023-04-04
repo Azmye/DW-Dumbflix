@@ -16,7 +16,7 @@ const Movies = () => {
         }
       />
 
-      <MovieList topComp={true} className={'pb-5'} />
+      <MovieList linkTo={'/movie-details/'} topComp={true} className={'pb-5'} />
     </React.Fragment>
   );
 };

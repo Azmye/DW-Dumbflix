@@ -1,5 +1,5 @@
-import ApiConfig from '../../Api/ApiConfig';
-import useFetch from '../../Api/useFetch';
+import ApiConfig from '../../Config/ApiConfig';
+import useFetch from '../../Config/useFetch';
 import CardItem from '../Global/CardItem';
 
 const MovieList = (props) => {
@@ -13,11 +13,24 @@ const MovieList = (props) => {
 
         <div className={`${props.slides ? 'carousel rounded-box' : 'grid grid-cols-6 gap-y-10'}`}>
           {error && console.log(error.message)}
-          {loading && <h2>Loading...</h2>}
+          {loading && (
+            <div>
+              <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
+            </div>
+          )}
           {data &&
             data.data.results
               .slice(0, 12)
-              .map((index) => <CardItem key={index.id} title={index.title} year={new Date(index.release_date).getFullYear()} className={`${props.slides ? 'carousel-item px-5' : ''} w-48`} thumbn={`${tmdb_w500Image(index.poster_path)}`} />)}
+              .map((index) => (
+                <CardItem
+                  linkTo={`${props.linkTo}${index.id}`}
+                  key={index.id}
+                  title={index.title}
+                  year={new Date(index.release_date).getFullYear()}
+                  className={`${props.slides ? 'carousel-item px-5' : ''} w-48`}
+                  thumbn={`${tmdb_w500Image(index.poster_path)}`}
+                />
+              ))}
         </div>
       </div>
     </div>

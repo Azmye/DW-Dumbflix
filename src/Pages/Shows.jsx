@@ -18,7 +18,7 @@ const Shows = () => {
         }
       />
 
-      <ShowsList topComp={true} className={'pb-5'} />
+      <ShowsList linkTo={'/shows-details/'} topComp={true} className={'pb-5'} />
     </React.Fragment>
   );
 };

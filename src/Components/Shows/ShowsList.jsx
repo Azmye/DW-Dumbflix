@@ -1,5 +1,5 @@
-import ApiConfig from '../../Api/ApiConfig';
-import useFetch from '../../Api/useFetch';
+import ApiConfig from '../../Config/ApiConfig';
+import useFetch from '../../Config/useFetch';
 import CardItem from '../Global/CardItem';
 
 const ShowsList = (props) => {
@@ -14,14 +14,21 @@ const ShowsList = (props) => {
           {error && console.log(error.message)}
           {loading && (
             <div>
-              <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
+              <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
             </div>
           )}
           {data &&
             data?.data.results
               .slice(0, 12)
               .map((index) => (
-                <CardItem key={index.id} title={index.name} year={new Date(index.first_air_date).getFullYear()} className={`${props.slides ? 'carousel-item px-5' : ''} w-48`} thumbn={`${tmdb_w500Image(index.poster_path)}`} />
+                <CardItem
+                  linkTo={`${props.linkTo}${index.id}`}
+                  key={index.id}
+                  title={index.name}
+                  year={new Date(index.first_air_date).getFullYear()}
+                  className={`${props.slides ? 'carousel-item px-5' : ''} w-48`}
+                  thumbn={`${tmdb_w500Image(index.poster_path)}`}
+                />
               ))}
         </div>
       </div>
