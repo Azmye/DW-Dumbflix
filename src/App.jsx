@@ -6,26 +6,10 @@ import Movies from './Pages/Movies';
 import Shows from './Pages/Shows';
 import DetailItem from './Pages/DetailsItem';
 
-// use context
-export const RegisterModal = createContext();
-export const SetRegisterModal = createContext();
-export const LoginModal = createContext();
-export const SetLoginModal = createContext();
-
 const App = () => {
-  const [registerModal, setRegisterModal] = useState(false);
-  const [loginModal, setLoginModal] = useState(false);
   return (
     <React.Fragment>
-      <SetRegisterModal.Provider value={setRegisterModal}>
-        <SetLoginModal.Provider value={setLoginModal}>
-          <LoginModal.Provider value={loginModal}>
-            <RegisterModal.Provider value={registerModal}>
-              <Navbar />
-            </RegisterModal.Provider>
-          </LoginModal.Provider>
-        </SetLoginModal.Provider>
-      </SetRegisterModal.Provider>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />

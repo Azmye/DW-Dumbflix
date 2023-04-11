@@ -8,7 +8,7 @@ const ShowsList = (props) => {
 
   return (
     <div className={`text-white ${props.className} ${props.topComp ? 'bg-gradient-to-b from-black via-black to-zinc-900' : 'bg-zinc-900'}`}>
-      <div className="container mx-auto">
+      <div className="container mx-auto lg:px-8">
         <h2 className="font-semibold text-lg mb-3">TV Shows</h2>
         <div className={`${props.slides ? 'carousel rounded-box' : 'grid grid-cols-6 gap-y-10'}`}>
           {error && console.log(error.message)}

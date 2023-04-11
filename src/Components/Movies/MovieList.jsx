@@ -8,7 +8,7 @@ const MovieList = (props) => {
 
   return (
     <div className={`${props.className} ${props.topComp ? 'bg-gradient-to-b from-black via-black to-zinc-900' : 'bg-zinc-900'} text-white `}>
-      <div className="container mx-auto">
+      <div className="container mx-auto lg:px-8">
         <h2 className="font-semibold text-xl  mb-5">Movies</h2>
 
         <div className={`${props.slides ? 'carousel rounded-box' : 'grid grid-cols-6 gap-y-10'}`}>

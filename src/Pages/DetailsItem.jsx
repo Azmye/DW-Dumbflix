@@ -38,7 +38,7 @@ const DetailsItem = (props) => {
           ))}
       </div>
       <div className="bg-black">
-        <div className="flex container justify-between mx-auto py-20">
+        <div className="flex container justify-between mx-auto py-20 lg:px-8">
           {data && (
             <div className="w-1/2 flex gap-x-8">
               <div className="w-1/3">{data && <img src={`${tmdb_w500Image(data.data.poster_path)}`} alt="" />}</div>
