@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Movies from './Pages/Movies';
 import Shows from './Pages/Shows';
 import DetailItem from './Pages/DetailsItem';
+import Profile from './Pages/Profile';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/shows" element={<Shows />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/movie-details/:id" element={<DetailItem endpoint={'/movie/'} />} />
         <Route path="/shows-details/:id" element={<DetailItem endpoint={'/tv/'} />} />
       </Routes>
