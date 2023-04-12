@@ -6,6 +6,9 @@ import Movies from './Pages/Movies';
 import Shows from './Pages/Shows';
 import DetailItem from './Pages/DetailsItem';
 import Profile from './Pages/Profile';
+import AdminHome from './Pages/AdminHome';
+import AdminForm from './Pages/AdminForm';
+import AdminTransactions from './Pages/AdminTransactions';
 
 const App = () => {
   return (
@@ -18,6 +21,9 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/movie-details/:id" element={<DetailItem endpoint={'/movie/'} />} />
         <Route path="/shows-details/:id" element={<DetailItem endpoint={'/tv/'} />} />
+        <Route path="/admin-dashboard" element={<AdminHome />} />
+        <Route path="/admin-form" element={<AdminForm />} />
+        <Route path="/admin-transactions" element={<AdminTransactions />} />
       </Routes>
     </React.Fragment>
   );

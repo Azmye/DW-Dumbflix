@@ -1,20 +1,13 @@
 import React from 'react';
-import smallThumb from '../assets/img/detail-dummy.png';
-import inplayThumb from '../assets/img/detail-dum-inplay.png';
 import useFetch from '../Config/useFetch';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import ApiConfig from '../Config/ApiConfig';
 
 const DetailsItem = (props) => {
   const { id } = useParams();
-  const { data, loading, error } = useFetch(`${props.endpoint}${id}`);
+  const { data } = useFetch(`${props.endpoint}${id}`);
   const { tmdb_originalImage, tmdb_w500Image } = ApiConfig;
-
-  useEffect(() => {
-    console.log(data);
-  }, [loading]);
 
   return (
     <React.Fragment>
@@ -37,8 +30,13 @@ const DetailsItem = (props) => {
             </div>
           ))}
       </div>
+
+      <div className="bg-black text-end container mx-auto px-8 pt-5 hidden">
+        <button className="bg-red-700 text-white px-8 py-2 rounded-md">Add Episode</button>
+      </div>
+
       <div className="bg-black">
-        <div className="flex container justify-between mx-auto py-20 lg:px-8">
+        <div className={`flex container justify-between mx-auto py-20 lg:px-8`}>
           {data && (
             <div className="w-1/2 flex gap-x-8">
               <div className="w-1/3">{data && <img src={`${tmdb_w500Image(data.data.poster_path)}`} alt="" />}</div>
@@ -52,7 +50,10 @@ const DetailsItem = (props) => {
               </div>
             </div>
           )}
-          <div className="w-1/2 pl-28">{data && <img className="rounded-md" src={`${tmdb_originalImage(data.data.backdrop_path)}`} alt="" />}</div>
+          <div className="w-1/2 mx-auto pl-28">
+            {data && <img className="rounded-md" src={`${tmdb_originalImage(data.data.backdrop_path)}`} alt="" />}
+            {data && <h3>{data.data.title ? data.data.title : `${data.data.name} : Episode 1`}</h3>}
+          </div>
         </div>
       </div>
     </React.Fragment>
