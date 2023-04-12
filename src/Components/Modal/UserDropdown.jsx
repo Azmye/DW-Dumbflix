@@ -7,7 +7,6 @@ import { UserContext } from '../../Context/UserContext';
 
 const UserDropdown = (props) => {
   const [userState, userDispatch] = useContext(UserContext);
-  console.log(userState);
   return (
     <div className="relative">
       <div className={`absolute top-full z-20 right-9 text-zinc-800 mt-1`}>

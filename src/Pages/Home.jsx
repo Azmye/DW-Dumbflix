@@ -12,7 +12,7 @@ const Home = () => {
         heroImage={heroImage}
         heroTitle={'The Witcher'}
         heroCateg={'TV SHOWS'}
-        linkTo={'/shows-detail/71912'}
+        linkTo={'/shows-details/71912'}
         heroYear={2019}
         heroDesc={'Set on a fictional, medieval-inspired landmass known as the Continent, The Witcher explores the legend of Geralt of Rivia, Yennefer of Vengerberg and Princess Ciri.'}
       />
