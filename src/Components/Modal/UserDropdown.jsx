@@ -2,8 +2,12 @@ import { Link } from 'react-router-dom';
 import { BsFillTriangleFill } from 'react-icons/bs';
 import { FaRegUser, FaFileInvoiceDollar } from 'react-icons/fa';
 import { IoLogOut } from 'react-icons/io5';
+import { useContext } from 'react';
+import { UserContext } from '../../Context/UserContext';
 
 const UserDropdown = (props) => {
+  const [userState, userDispatch] = useContext(UserContext);
+  console.log(userState);
   return (
     <div className="relative">
       <div className={`absolute top-full z-20 right-9 text-zinc-800 mt-1`}>
@@ -17,7 +21,7 @@ const UserDropdown = (props) => {
           <FaFileInvoiceDollar className="text-xl text-red-700" /> Pay
         </Link>
         <hr className="w-full h-2" />
-        <Link className="flex items-center cursor-pointer gap-2 font-semibold px-5">
+        <Link onClick={() => userDispatch({ type: 'LOGOUT' })} className="flex items-center cursor-pointer gap-2 font-semibold px-5">
           <IoLogOut className="text-xl text-red-700" /> Logout
         </Link>
       </div>
